@@ -8,8 +8,12 @@ block header
 
 block content
     form.login-form(action="submit")
-        input(type="text" placeholder='아이디 또는 이메일').login-input.login-input__id 
-        input(type='password' placeholder='비밀번호').login-input.login-input__pw
+        .input-container
+            input(type="text" placeholder='아이디 또는 이메일' ).login-input.login-input__id
+            span.input-alert-message.hidden 아이디 또는 이메일을 입력해주세요.
+        .input-container
+            input(type='password' placeholder='비밀번호').login-input.login-input__pw
+            span.input-alert-message.hidden 비밀번호를 입력해주세요.
         button(type="submit").login-button 로그인
     .find-account
         span 아이디 찾기
@@ -27,4 +31,5 @@ block content
             span Apple로 로그인
     .join-container
         span 혹시, 배달의민족이 처음이신가요?
-        a(href="/join") 회원가입   
+        a(href="/join") 회원가입
+    script(src="/js/login.js") 

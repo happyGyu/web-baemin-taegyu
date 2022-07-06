@@ -2,6 +2,12 @@ body {
   padding: 2rem;
 }
 
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
 .login-form {
   margin-top: 4rem;
   display: flex;
@@ -24,6 +30,10 @@ body {
   font-weight: 700;
   border-radius: 0.5rem;
   padding: 1rem;
+}
+
+.input-alert-message {
+  color: red;
 }
 
 .find-account {
@@ -72,4 +82,8 @@ body {
 .join-container a {
   margin-left: 1rem;
   color: #2ac1bc;
+}
+
+.hidden {
+  visibility: hidden;
 }
