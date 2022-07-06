@@ -1,0 +1,102 @@
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+
+.banner {
+  background-color: grey;
+  height: 10rem;
+}
+
+.login-anchor-container {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  bor
+}
+
+.user-profile {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.login-anchor {
+  font-size: 2rem;
+  color: lightgray;
+}
+
+.category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: calc((100% - 2px) / 3);
+  padding: 1rem 0;
+}
+
+.category-item__icon {
+  height: 3rem;
+}
+
+.category-item__name {
+  margin-top: 0.5rem;
+}
+
+.event {
+  margin: 1rem 0;
+}
+
+.right-arrow-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: white;
+  gap: 0.5rem;
+}
+
+.right-arrow-menu img {
+  width: 3rem;
+}
+
+.right-arrow-menu span {
+  font-size: 1.5rem;
+  color: green;
+}
+
+.right-arrow-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.menu-content {
+  background-color: white;
+  padding: 2rem;
+  border-top: 1px solid lightgrey;
+}
+
+.menu__title {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menu__title img {
+  width: 3rem;
+}
+
+.menu__description {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: grey;
+}
