@@ -1,6 +1,6 @@
 h1 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 1rem 0;
 }
 
@@ -13,7 +13,7 @@ h1 {
   display: flex;
   align-items: center;
   padding: 1rem;
-  bor
+  border-bottom: 1px solid lightgrey;
 }
 
 .user-profile {
@@ -52,7 +52,8 @@ h1 {
 }
 
 .event {
-  margin: 1rem 0;
+  border-top: 1rem solid lightgray;
+  border-bottom: 1rem solid lightgray;
 }
 
 .right-arrow-menu {
