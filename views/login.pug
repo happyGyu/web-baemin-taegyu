@@ -1,0 +1,30 @@
+extends layout
+
+block styles
+    link(rel="stylesheet", href="/style/login.css")
+
+block header
+    h1 로그인 페이지
+
+block content
+    form.login-form(action="submit")
+        input(type="text" placeholder='아이디 또는 이메일').login-input.login-input__id 
+        input(type='password' placeholder='비밀번호').login-input.login-input__pw
+        button(type="submit").login-button 로그인
+    .find-account
+        span 아이디 찾기
+        .divider 
+        span 비밀번호 찾기
+    ul.oauth-login-container
+        li.oauth-login
+            img(src="https://user-images.githubusercontent.com/95538993/177448688-0ee6f728-aaab-49d5-a084-4a1735d32261.png", alt="facebook logo").oauth-login__img
+            span 페이스북으로 로그인
+        li.oauth-login
+            img(src="https://user-images.githubusercontent.com/95538993/177448689-d1db548e-be81-46c1-9546-1e60802aa8ef.png", alt="naver logo").oauth-login__img
+            span 네이버로 로그인 
+        li.oauth-login
+            img(src="https://user-images.githubusercontent.com/95538993/177448674-8725d9cb-cdcb-4943-ba56-837545eb2f0f.png", alt="apple logo").oauth-login__img
+            span Apple로 로그인
+    .join-container
+        span 혹시, 배달의민족이 처음이신가요?
+        a(href="/join") 회원가입   
