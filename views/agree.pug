@@ -11,23 +11,23 @@ block content
        br
        | 약관동의가 필요해요
     ul.checkboxes-container
-        li.top-checkbox-container
-            input(type="checkbox", name="check-all").checkbox.top-checkbox
+        li.master-checkbox-container
+            input(type="checkbox").checkbox.master-checkbox
             span 전체 동의
         li.checkbox-container
-            input(type="checkbox", name="check-all").checkbox
+            input(type="checkbox").checkbox.slave-checkbox.required-checkbox
             span 배달의민족 이용약관 동의
         li.checkbox-container
-            input(type="checkbox", name="check-all").checkbox
+            input(type="checkbox").checkbox.slave-checkbox.required-checkbox
             span 전자금융거래 이용약관 동의
         li.checkbox-container
-            input(type="checkbox", name="check-all").checkbox
+            input(type="checkbox").checkbox.slave-checkbox.required-checkbox
             span 개인정보 수집이용 동의
         li.checkbox-container
-            input(type="checkbox", name="check-all").checkbox.optional-checkbox
+            input(type="checkbox").checkbox.slave-checkbox
             span 개인정보 제3자 제공 동의 (선택)
         li.checkbox-container
-            input(type="checkbox", name="check-all").checkbox.optional-checkbox
+            input(type="checkbox").checkbox.slave-checkbox
             span 마케팅 정보 메일, SMS 수신동의 (선택)
     ul.age-checks-container
         li.age-check-container
@@ -39,3 +39,4 @@ block content
             span 만 14세 미만입니다. 
             img(src="https://user-images.githubusercontent.com/95538993/177448684-e2c743c1-10f9-4aff-a44c-cda61ca59c3e.png", alt="adult image")
     button(disabled).next-button 다음으로  
+    script(src="/js/agree.js") 
