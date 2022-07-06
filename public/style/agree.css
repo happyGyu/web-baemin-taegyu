@@ -1,0 +1,56 @@
+body {
+  padding: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 3rem 0;
+}
+
+.checkboxes-container {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.checkbox-container {
+  margin-top: 2rem;
+}
+
+.top-checkbox-container {
+  font-weight: 700;
+  padding: 2rem 0;
+  border-bottom: 1px solid lightgray;
+}
+
+.checkbox {
+  margin-right: 0.5rem;
+}
+
+.age-check-container {
+  position: relative;
+  margin-top: 1rem;
+  background-color: lightgrey;
+  padding: 2rem;
+  font-size: 1.25rem;
+}
+
+.age-check-container img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+.next-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #2ac1bc;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.next-button:disabled {
+  background-color: lightgray;
+}
