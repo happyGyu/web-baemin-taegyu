@@ -1,3 +1,5 @@
+import { $, $All } from "./domUtil.js";
+
 const handleMasterCheckboxClick = (checkboxes, $masterCheckbox) => {
   Array.from(checkboxes).forEach(
     (checkbox) => (checkbox.checked = $masterCheckbox.checked)
@@ -25,12 +27,12 @@ const handleCheckboxesContainerClick = (
 };
 
 const init = () => {
-  $checkboxesContainer = document.querySelector(".checkboxes-container");
-  const $masterCheckbox = document.querySelector(".master-checkbox");
-  const checkboxes = document.querySelectorAll(".checkbox");
-  const slaveCheckboxes = document.querySelectorAll(".slave-checkbox");
-  const requiredCheckboxes = document.querySelectorAll(".required-checkbox");
-  const $nextButton = document.querySelector(".next-button");
+  const $checkboxesContainer = $(".checkboxes-container");
+  const $masterCheckbox = $(".master-checkbox");
+  const checkboxes = $All(".checkbox");
+  const slaveCheckboxes = $All(".slave-checkbox");
+  const requiredCheckboxes = $All(".required-checkbox");
+  const $nextButton = $(".next-button");
 
   $checkboxesContainer.addEventListener(
     "click",
