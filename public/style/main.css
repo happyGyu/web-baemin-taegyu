@@ -1,30 +1,34 @@
 h1 {
-  text-align: center;
+  margin: 1rem;
   font-size: 1.5rem;
-  padding: 1rem 0;
+  font-weight: 800;
+  text-align: center;
 }
 
 .banner {
   width: 100%;
-  margin: 0 auto;
 }
 
-.login-anchor-container {
+.user-container {
   display: flex;
   align-items: center;
   padding: 1rem;
   border-bottom: 1px solid lightgrey;
 }
 
-.user-profile {
-  width: 5rem;
-  height: 5rem;
+.user__profile {
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   margin-right: 1rem;
 }
 
+.user__name {
+  font-size: 1.5rem;
+}
+
 .login-anchor {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: lightgray;
 }
 
@@ -32,19 +36,22 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  background-color: lightgrey;
 }
 
 .category-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
   background-color: white;
   width: calc((100% - 2px) / 3);
+  border-bottom: 1px solid lightgrey;
   padding: 1rem 0;
 }
 
 .category-item__icon {
-  height: 3rem;
+  height: 2.5rem;
 }
 
 .category-item__name {
@@ -52,35 +59,24 @@ h1 {
 }
 
 .event {
-  border-top: 1rem solid lightgrey;
-  border-bottom: 1rem solid lightgrey;
-}
-
-.right-arrow-menu {
-  position: relative;
+  border: solid lightgrey;
+  border-width: 1rem 0;
   display: flex;
   align-items: center;
   padding: 1.5rem;
-  background-color: white;
   gap: 0.5rem;
 }
 
-.right-arrow-menu img {
+.event img {
   width: 3rem;
 }
 
-.right-arrow-menu span {
+.event span {
   font-size: 1.5rem;
   color: green;
 }
 
-.right-arrow-icon {
-  width: 1rem;
-  height: 1rem;
-}
-
-.menu-content {
-  background-color: white;
+.menu {
   padding: 2rem;
   border-top: 1px solid lightgrey;
 }

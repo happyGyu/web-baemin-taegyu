@@ -1,13 +1,14 @@
+import { $, $All } from "./domUtil.js";
+import { debounce } from "./util.js";
+
 const init = () => {
-  const $emailInput = document.querySelector('[name="email-input"]');
-  const $birthdayInput = document.querySelector('[name="birthday-input"]');
-  const $emailValidator = document.querySelector(".email-validator");
-  const $additionalInfoContainer = document.querySelector(
-    ".additional-info-container"
-  );
-  const inputList = document.querySelectorAll(".smart-input__inputbox");
-  const $submitBtn = document.querySelector(".right-header-anchor");
-  const $infoForm = document.querySelector(".smart-input-form");
+  const $emailInput = $('[name="email-input"]');
+  const $birthdayInput = $('[name="birthday-input"]');
+  const $emailValidator = $(".email-validator");
+  const $additionalInfoContainer = $(".additional-info-container");
+  const inputList = $All(".smart-input__inputbox");
+  const $submitBtn = $(".right-header-anchor");
+  const $infoForm = $(".smart-input-form");
 
   $emailValidator.addEventListener(
     "click",
@@ -138,16 +139,6 @@ const checkBirthdayValidity = (birthday) => {
     oldestDate < parsedBirthday &&
     formattedBirthday.length === 10
   );
-};
-
-const debounce = (callback, time) => {
-  let debounceID;
-  return (...args) => {
-    if (debounceID) {
-      clearTimeout(debounceID);
-    }
-    debounceID = setTimeout(() => callback(...args), time);
-  };
 };
 
 const handleSubmitBtnClick = ($infoForm) => {

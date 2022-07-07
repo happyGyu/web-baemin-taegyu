@@ -4,60 +4,32 @@ block styles
     link(rel="stylesheet", href="/style/main.css")
 
 block header
-    h1 My배민
+    header 
+        h1 My배민
 
 block content 
     img(src="/asset/img/banner.png", alt="banner image").banner
-    .login-anchor-container
-        img(src="/asset/img/user.png").user-profile
+    .user-container
+        img(src="/asset/img/user.png").user__profile
         if userInfo
-           span 안녕하세요 #{userInfo.nickname} 
-        a(href="/login").login-anchor 로그인해주세요
-    section
-        ul.category
+           span.user__name 안녕하세요 #{userInfo.nickname}
+        else 
+            a(href="/login").login-anchor 로그인해주세요
+    ul.category
+        each item in mainPageCategoryList
             li.category-item
-                img(src='/asset/img/point.png', alt="point icon").category-item__icon
-                span.category-item__name 포인트
-            li.category-item
-                img(src="/asset/img/coupon.png", alt="coupon icon").category-item__icon
-                span.category-item__name 쿠폰함
-            li.category-item
-                img(src="/asset/img/present.png", alt="gift icon").category-item__icon
-                span.category-item__name 선물함
-            li.category-item
-                img(src="/asset/img/cart.png", alt="cart icon").category-item__icon
-                span.category-item__name 찜
-            li.category-item
-                img(src="/asset/img/order.png", alt="order icon").category-item__icon
-                span.category-item__name 주문내역
-            li.category-item
-                img(src="/asset/img/review.png", alt="review icon").category-item__icon
-                span.category-item__name 리뷰관리
-    section 
-        .event.right-arrow-menu
-            img(src="/asset/img/root.png", alt="root image")
-            span 일회용품 덜 쓰기, 함께해요
-            .right-arrow-icon
-                i.fa-solid.fa-angle-right
-    section 
-        ul.menus
+                img(src= item.imgSrc, alt= item.alt).category-item__icon
+                span.category-item__name= item.name
+    .event
+        img(src="/asset/img/root.png", alt="root image")
+        span 일회용품 덜 쓰기, 함께해요
+    ul.menus
+        each menu in mainPageMenuList
             li.menu 
-                .menu-content
-                    .menu__title 
-                        span 배민페이 등록
-                        img(src="/asset/img/new.png", alt="new icon").menu__title-icon
-                    .menu__description
-                        span 배민페이로 결제하면 최대 5.5% 배민포인트가 적립됩니다!
-                .menu-content
-                    .menu__title 
-                        span 가족계정 관리
-                        img(src="/asset/img/new.png", alt="new icon").menu__title-icon
-                    .menu__description
-                        span 결제수단을 공유해 우리 가족의 끼니를 챙겨주세요.
-                .menu-content
-                    .menu__title 
-                        span 공지사항
-                .menu-content
-                    .menu__title 
-                        span 배민커넥트 지원
-                    
+                .menu__title 
+                    span= menu.title
+                    if menu.isNew
+                        img(src="/asset/img/new.png", alt="new icon").menu__title-icon         
+                .menu__description
+                    span= menu.description
+                

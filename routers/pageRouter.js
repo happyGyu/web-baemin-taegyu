@@ -1,8 +1,15 @@
 const express = require("express");
+const { mainPageCategoryList, mainPageMenuList } = require("./constant");
+
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.render("main", { title: "배민 회원", userInfo: req.session.user });
+  res.render("main", {
+    title: "배민 회원",
+    mainPageCategoryList,
+    mainPageMenuList,
+    userInfo: req.session.user,
+  });
 });
 
 router.get("/login", (req, res) => {
