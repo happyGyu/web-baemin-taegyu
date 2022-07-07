@@ -1,7 +1,5 @@
 const express = require("express");
-const low = require("lowdb");
-const FileSync = require("lowdb/adapters/FileSync");
-
+const db = require("../db/db");
 const router = express.Router();
 
 router.get("/agree", (_, res) => {
@@ -17,8 +15,6 @@ router.get("/user-info", (_, res) => {
 });
 
 router.post("/user-info", (req, res) => {
-  const adapter = new FileSync("db.json");
-  const db = low(adapter);
   db.get("users")
     .push({
       email: req.body["email-input"],
