@@ -1,16 +1,13 @@
 body {
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
 }
 
 header {
   display: flex;
-  justify-content: space-between;
 }
 
 .left-header-anchor {
-  width: 1em;
+  width: 1rem;
   height: 1rem;
   background: url("/asset/img/cancel.png") no-repeat;
   background-size: contain;
@@ -76,7 +73,6 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  flex-grow: 1;
   gap: 1rem;
   font-size: 1.25rem;
 }

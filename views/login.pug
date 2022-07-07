@@ -4,7 +4,7 @@ block styles
     link(rel="stylesheet", href="/style/login.css")
 
 block header
-    header 
+    header
         a(href="/").left-header-anchor
 
 block content
@@ -15,7 +15,6 @@ block content
         .input-container
             input(type='password', placeholder='비밀번호', name='password').login-input.login-input__pw
             span.input-alert-message.hidden 비밀번호를 입력해주세요.
-
         if isWrong
             span.input-alert-message 존재하지 않는 계정 혹은 틀린 비밀번호입니다.
         button(type="submit").login-button 로그인
@@ -36,4 +35,4 @@ block content
     .join-container
         span 혹시, 배달의민족이 처음이신가요?
         a(href="/join/agree") 회원가입
-    script(src="/js/login.js") 
+    script(type="module" src="/js/login.js") 

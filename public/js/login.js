@@ -1,27 +1,29 @@
+import { $, addOrRemoveClass } from "./domUtil.js";
+
 const handleLoginSubmit = (
   $idInput,
   $pwInput,
   $idInputAlertMessage,
   $pwInputAlertMessage,
-  e
+  event
 ) => {
-  //e.preventDefault();
-  if (!$idInput.value.length) {
-    $idInputAlertMessage.classList.remove("hidden");
-  } else {
-    $idInputAlertMessage.classList.add("hidden");
+  const isIdValid = checkInputValidity($idInput);
+  const isPwValid = checkInputValidity($pwInput);
+  if (!isIdValid || !isPwValid) {
+    event.preventDefault();
   }
-  if (!$pwInput.value.length) {
-    $pwInputAlertMessage.classList.remove("hidden");
-  } else {
-    $pwInputAlertMessage.classList.add("hidden");
-  }
+  addOrRemoveClass($idInputAlertMessage, "hidden", isIdValid);
+  addOrRemoveClass($pwInputAlertMessage, "hidden", isPwValid);
+};
+
+const checkInputValidity = (input) => {
+  return input.value.length > 0;
 };
 
 const init = () => {
-  const $loginForm = document.querySelector(".login-form");
-  const $idInput = document.querySelector(".login-input__id");
-  const $pwInput = document.querySelector(".login-input__pw");
+  const $loginForm = $(".login-form");
+  const $idInput = $(".login-input__id");
+  const $pwInput = $(".login-input__pw");
   const $idInputAlertMessage = $idInput.nextElementSibling;
   const $pwInputAlertMessage = $pwInput.nextElementSibling;
 
