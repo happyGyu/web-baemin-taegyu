@@ -8,21 +8,20 @@ block header
     header
         a(href="/join/agree").left-header-anchor
         h1 회원가입
-        a(href='/join/user-info').right-header-anchor 다음
+        button(disabled).right-header-anchor 다음
 
 block content 
-    form.smart-input-form
+    form(action="/join/user-info", method="get").smart-input-form
         .smart-input-container 
             h2.smart-input__title 휴대전화
             .smart-input
                 input(type="tel").smart-input__inputbox
                 button.smart-input__reset-btn
-                .smart-input__validity-checker.smart-input__validity-checker--valid.hidden
-                .smart-input__validity-checker.smart-input__validity-checker--invalid
+                .smart-input__validity-checker
 
         button(type="submit" disabled).smart-input__submit-btn 인증번호 받기
-    section.certification-num-container.hidden
+    .certification-num-container.hidden
         h2 인증번호
         input(type="text", placeholder='인증번호를 입력해주세요').certification-num-input
         button.certification-num-reissue-btn 인증번호 다시받기
-    script(src="/js/auth.js") 
+    script(type='module' src="/js/auth.js") 

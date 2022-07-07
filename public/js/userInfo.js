@@ -140,16 +140,6 @@ const checkBirthdayValidity = (birthday) => {
   );
 };
 
-const debounce = (callback, time) => {
-  let debounceID;
-  return (...args) => {
-    if (debounceID) {
-      clearTimeout(debounceID);
-    }
-    debounceID = setTimeout(() => callback(...args), time);
-  };
-};
-
 const handleSubmitBtnClick = ($infoForm) => {
   $infoForm.submit();
 };
