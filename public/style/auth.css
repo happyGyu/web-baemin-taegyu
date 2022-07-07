@@ -19,7 +19,7 @@ input {
   padding: 0.75rem;
 }
 
-.smart-input input {
+.smart-input__inputbox {
   flex-grow: 1;
 }
 
