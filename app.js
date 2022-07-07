@@ -1,12 +1,12 @@
 const express = require("express");
 const path = require("path");
-const cookieParser = require("cookie-parser");
 const session = require("express-session");
+
 const joinRouter = require("./routers/joinRouter");
 const loginRouter = require("./routers/loginRouter");
 const pageRouter = require("./routers/pageRouter");
-const { uuid } = require("uuidv4");
 const port = 3001;
+
 const app = express();
 
 app.use("/style", express.static(path.join(__dirname, "public", "style")));
@@ -15,14 +15,11 @@ app.use("/asset", express.static(path.join(__dirname, "public", "asset")));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(
   session({
     secret: "slkdfjldskfjkTAEGYU",
     resave: false,
     saveUninitialized: true,
-    genid: uuid,
-    cookie: { httpOnly: true, secure: false },
   })
 );
 

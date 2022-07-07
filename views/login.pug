@@ -15,6 +15,9 @@ block content
         .input-container
             input(type='password', placeholder='비밀번호', name='password').login-input.login-input__pw
             span.input-alert-message.hidden 비밀번호를 입력해주세요.
+
+        if isWrong
+            span.input-alert-message 존재하지 않는 계정 혹은 틀린 비밀번호입니다.
         button(type="submit").login-button 로그인
     .find-account
         span 아이디 찾기

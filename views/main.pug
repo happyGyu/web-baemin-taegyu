@@ -10,6 +10,8 @@ block content
     img(src="/asset/img/banner.png", alt="banner image").banner
     .login-anchor-container
         img(src="/asset/img/user.png").user-profile
+        if userInfo
+           span 안녕하세요 #{userInfo.nickname} 
         a(href="/login").login-anchor 로그인해주세요
     section
         ul.category
