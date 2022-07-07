@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const joinRouter = require("./routers/joinRouter");
 const pageRouter = require("./routers/pageRouter");
-const port = 3000;
+const port = 3001;
 const app = express();
 
 app.use("/style", express.static(path.join(__dirname, "public", "style")));

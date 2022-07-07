@@ -1,0 +1,63 @@
+h2 {
+  font-weight: 600;
+}
+
+input {
+  all: unset;
+}
+
+.smart-input-container {
+  margin: 2rem 0;
+}
+
+.smart-input__body {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.smart-input {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  gap: 1rem;
+  border-bottom: 1px solid gray;
+  padding: 0.75rem 0;
+}
+
+.smart-input__inputbox {
+  flex-grow: 1;
+}
+
+.smart-input__reset-btn {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url("https://user-images.githubusercontent.com/95538993/177669348-1c652ca5-e306-469d-9a63-43164941745c.png");
+  background-size: cover;
+}
+
+.smart-input__validity-checker {
+  width: 1rem;
+  height: 1rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("https://user-images.githubusercontent.com/95538993/177671176-abe5f8be-4435-43f8-8d6c-cb980d621ba1.png");
+}
+
+.smart-input__validity-checker.valid {
+  background: url("https://user-images.githubusercontent.com/95538993/177671171-f5394d66-c708-474f-9b5b-dbc1fc66a5b5.png");
+}
+
+.smart-input__submit-btn {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid lightgrey;
+  font-size: 1.25rem;
+}
+
+.smart-input__error-message {
+  position: absolute;
+  bottom: -1.25rem;
+  color: red;
+}

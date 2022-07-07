@@ -1,0 +1,14 @@
+body {
+  padding: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.email-validator {
+  border: 1px solid lightgray;
+  border-radius: 0.125rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.125rem;
+}
