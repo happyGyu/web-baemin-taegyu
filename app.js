@@ -7,6 +7,7 @@ const app = express();
 
 app.use("/style", express.static(path.join(__dirname, "public", "style")));
 app.use("/js", express.static(path.join(__dirname, "public", "js")));
+app.use("/asset", express.static(path.join(__dirname, "public", "asset")));
 
 app.set("view engine", "pug");
 app.use("/join", joinRouter);
