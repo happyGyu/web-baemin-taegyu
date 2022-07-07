@@ -5,7 +5,10 @@ block styles
     link(rel="stylesheet", href="/style/userInfo.css")
 
 block header
-    h1 정보 입력 페이지
+    header
+        a(href="/join/auth").left-header-anchor
+        h1 회원가입
+        a.right-header-anchor 완료
 
 block content 
     form.smart-input-form

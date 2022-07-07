@@ -4,7 +4,10 @@ block styles
     link(rel="stylesheet", href="/style/agree.css")
 
 block header
-    h1 약관 동의
+    header
+        a(href="/login").left-header-anchor
+        h1 회원가입
+        a.right-header-anchor
 
 block content
     h2 어서오세요
@@ -40,5 +43,6 @@ block content
             input(type="radio", name="age-radio-button").age-check
             span 만 14세 미만입니다. 
             img(src="https://user-images.githubusercontent.com/95538993/177448684-e2c743c1-10f9-4aff-a44c-cda61ca59c3e.png", alt="adult image")
-    button(disabled).next-button 다음으로  
+    button(disabled).next-button 
+        a(href="/join/auth") 다음으로  
     script(src="/js/agree.js") 
