@@ -8,10 +8,10 @@ block header
     header
         a(href="/join/auth").left-header-anchor
         h1 회원가입
-        a.right-header-anchor 완료
+        button(disabled).right-header-anchor 완료
 
 block content 
-    form.smart-input-form
+    form(method="post").smart-input-form
         .smart-input-container 
             h2.smart-input__title 이메일
             .smart-input__body 

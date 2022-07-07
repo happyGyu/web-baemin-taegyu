@@ -5,6 +5,9 @@ const init = () => {
   const $additionalInfoContainer = document.querySelector(
     ".additional-info-container"
   );
+  const inputList = document.querySelectorAll(".smart-input__inputbox");
+  const $submitBtn = document.querySelector(".right-header-anchor");
+  const $infoForm = document.querySelector(".smart-input-form");
 
   $emailValidator.addEventListener(
     "click",
@@ -13,7 +16,11 @@ const init = () => {
   $birthdayInput.addEventListener("input", handleBirthdayInput);
   $additionalInfoContainer.addEventListener(
     "input",
-    debounce(handleInfoInput.bind(this), 500)
+    debounce(handleInfoInput.bind(this, inputList, $submitBtn), 500)
+  );
+  $submitBtn.addEventListener(
+    "click",
+    handleSubmitBtnClick.bind(null, $infoForm)
   );
 };
 
@@ -43,8 +50,14 @@ const handleBirthdayInput = (e) => {
     onlyNum.slice(0, 4) + "." + onlyNum.slice(4, -2) + "." + onlyNum.slice(-2);
 };
 
-const handleInfoInput = ({ target }) => {
+const handleInfoInput = (inputList, $submitBtn, { target }) => {
   handleInputValue(target);
+  const isAllInputValid = checkAllValidity(inputList);
+  $submitBtn.disabled = !isAllInputValid;
+};
+
+const checkAllValidity = (inputList) => {
+  return Array.from(inputList).every(checkInputValidity);
 };
 
 const handleInputValue = ($input) => {
@@ -135,6 +148,10 @@ const debounce = (callback, time) => {
     }
     debounceID = setTimeout(() => callback(...args), time);
   };
+};
+
+const handleSubmitBtnClick = ($infoForm) => {
+  $infoForm.submit();
 };
 
 init();
