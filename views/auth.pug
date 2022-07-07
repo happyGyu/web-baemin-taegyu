@@ -1,0 +1,20 @@
+extends layout 
+
+block styles
+    link(rel="stylesheet", href="/style/auth.css")
+
+
+block header 
+    h1 핸드폰 인증 페이지
+
+block content 
+    form.smart-input-form
+        .smart-input-container 
+            h2.smart-input__title 휴대전화
+            .smart-input
+                input(type="text")
+                button.smart-input__reset-btn
+                .smart-input__validity-checker.smart-input__validity-checker--valid.hidden
+                .smart-input__validity-checker.smart-input__validity-checker--invalid
+
+        button(type="submit").smart-input__submit-btn 인증번호 받기        
