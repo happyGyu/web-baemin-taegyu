@@ -12,7 +12,9 @@ block content
        | 약관동의가 필요해요
     ul.checkboxes-container
         li.master-checkbox-container
-            input(type="checkbox").checkbox.master-checkbox
+            input(type="checkbox", name='master-checkbox').checkbox.master-checkbox
+            label(for="master-checkbox")
+                img.uncheckedBox(src="", alt="") 
             span 전체 동의
         li.checkbox-container
             input(type="checkbox").checkbox.slave-checkbox.required-checkbox
