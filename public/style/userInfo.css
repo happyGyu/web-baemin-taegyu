@@ -6,7 +6,7 @@ body {
   display: none;
 }
 
-.duplication-checker {
+.email-validator {
   border: 1px solid lightgray;
   border-radius: 0.125rem;
   padding: 0.5rem 1rem;

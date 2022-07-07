@@ -13,23 +13,27 @@ block content
             h2.smart-input__title 이메일
             .smart-input__body 
                 .smart-input
-                    input(type="email").smart-input__inputbox
+                    input(type="email", name='email-input').smart-input__inputbox
                     .smart-input__validity-checker
-                button.duplication-checker 중복확인
+                    .smart-input__error-message.hidden 유효한 이메일을 입력해주세요
+                button(type="button").email-validator 중복확인
         .additional-info-container.hidden
             .smart-input-container 
                 h2.smart-input__title 닉네임
                 .smart-input
-                    input(type="text").smart-input__inputbox
+                    input(type="text", name='nickname-input').smart-input__inputbox
                     .smart-input__validity-checker
+                    .smart-input__error-message.hidden 닉네임은 필수 입력 값입니다.
             .smart-input-container 
                 h2.smart-input__title 비밀번호
                 .smart-input
-                    input(type="password").smart-input__inputbox
+                    input(type="password", name='password-input').smart-input__inputbox
                     .smart-input__validity-checker
+                    .smart-input__error-message.hidden 10자 이상 영어 대문자, 소문자, 숫자, 특수문자 중 2종류를 조합해야 합니다.
             .smart-input-container 
                 h2.smart-input__title 생년월일
                 .smart-input
-                    input(type="text", placeholder='예) 1995.08.08').smart-input__inputbox
+                    input(type="text", name='birthday-input',placeholder='예) 1995.08.08').smart-input__inputbox
                     .smart-input__validity-checker
+                    .smart-input__error-message.hidden 유효한 생년월일 값을 입력해주세요.
     script(src="/js/userInfo.js") 

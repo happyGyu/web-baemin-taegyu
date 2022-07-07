@@ -10,10 +10,17 @@ input {
   margin: 2rem 0;
 }
 
+.smart-input__body {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .smart-input {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-grow: 1;
   gap: 1rem;
   border-bottom: 1px solid gray;
   padding: 0.75rem 0;
@@ -47,4 +54,10 @@ input {
   padding: 1rem;
   border: 1px solid lightgrey;
   font-size: 1.25rem;
+}
+
+.smart-input__error-message {
+  position: absolute;
+  bottom: -1.25rem;
+  color: red;
 }
