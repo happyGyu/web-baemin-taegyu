@@ -46,6 +46,30 @@ const handleResetBtnClick = ($smartInputbox, e) => {
   $smartInputbox.value = "";
 };
 
+const handleSubmitBtnClick = (
+  $certificationNumContainer,
+  $certificationNumInput,
+  e
+) => {
+  e.preventDefault();
+  e.target.classList.add("hidden");
+  $certificationNumContainer.classList.remove("hidden");
+  setCertificationInputValue($certificationNumInput);
+};
+
+const setCertificationInputValue = ($certificationNumInput) => {
+  const newCertificationNumString = getCertificationNumString();
+  setTimeout(() => {
+    $certificationNumInput.value = newCertificationNumString;
+  }, 2000);
+};
+
+const getCertificationNumString = () => {
+  const randomNum = Math.floor(Math.random() * 10000);
+  const formattedNumString = String(randomNum).padStart(4, "0");
+  return formattedNumString;
+};
+
 const init = () => {
   const $smartInputbox = document.querySelector(".smart-input__inputbox");
   const $submitBtn = document.querySelector(".smart-input__submit-btn");
@@ -56,11 +80,20 @@ const init = () => {
   const $invalidChecker = document.querySelector(
     ".smart-input__validity-checker--invalid"
   );
+  const $certificationNumContainer = document.querySelector(
+    ".certification-num-container"
+  );
+  const $certificationNumInput = document.querySelector(
+    ".certification-num-input"
+  );
+
+  const $reissueBtn = document.querySelector(".certification-num-reissue-btn ");
   const selectCheckerType = toggleChecker.bind(
     null,
     $validChecker,
     $invalidChecker
   );
+
   $smartInputbox.addEventListener(
     "input",
     handleInputboxKeydown.bind(null, $submitBtn, selectCheckerType)
@@ -68,6 +101,20 @@ const init = () => {
   $resetBtn.addEventListener(
     "click",
     handleResetBtnClick.bind(null, $smartInputbox)
+  );
+
+  $submitBtn.addEventListener(
+    "click",
+    handleSubmitBtnClick.bind(
+      null,
+      $certificationNumContainer,
+      $certificationNumInput
+    )
+  );
+
+  $reissueBtn.addEventListener(
+    "click",
+    setCertificationInputValue.bind(null, $certificationNumInput)
   );
 };
 

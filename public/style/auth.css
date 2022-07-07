@@ -2,12 +2,16 @@ body {
   padding: 2rem;
 }
 
+h2 {
+  font-weight: 600;
+}
+
 input {
   all: unset;
 }
 
 .smart-input-container {
-  margin-top: 2rem;
+  margin: 2rem 0;
 }
 
 .smart-input {
@@ -16,7 +20,7 @@ input {
   align-items: center;
   gap: 1rem;
   border-bottom: 1px solid gray;
-  padding: 0.75rem;
+  padding: 0.75rem 0;
 }
 
 .smart-input__inputbox {
@@ -50,7 +54,24 @@ input {
   padding: 1rem;
   border: 1px solid lightgrey;
   font-size: 1.25rem;
-  margin-top: 2rem;
+}
+
+.certification-num-container {
+  position: relative;
+}
+
+.certification-num-input {
+  border-bottom: 1px solid gray;
+  padding: 0.75rem 0;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.certification-num-reissue-btn {
+  position: absolute;
+  right: 0;
+  bottom: -2rem;
+  color: #2ac1bc;
 }
 
 .hidden {
