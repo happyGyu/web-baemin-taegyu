@@ -7,33 +7,35 @@ block header
     h1 My배민
 
 block content 
-    .banner 
+    img(src="/asset/img/banner.png", alt="banner image").banner
     .login-anchor-container
-        img(src="https://user-images.githubusercontent.com/95538993/177448702-475a897a-f61b-4b80-aaad-c309d3d123a4.png").user-profile
+        img(src="/asset/img/user.png").user-profile
+        if userInfo
+           span 안녕하세요 #{userInfo.nickname} 
         a(href="/login").login-anchor 로그인해주세요
     section
         ul.category
             li.category-item
-                img(src='https://user-images.githubusercontent.com/95538993/177448696-d28a4808-7ee8-42b5-9935-84213fccafa7.png', alt="point icon").category-item__icon
+                img(src='/asset/img/point.png', alt="point icon").category-item__icon
                 span.category-item__name 포인트
             li.category-item
-                img(src="https://user-images.githubusercontent.com/95538993/177448687-c45ec268-8878-4511-8912-f75c6336cab8.png", alt="coupon icon").category-item__icon
+                img(src="/asset/img/coupon.png", alt="coupon icon").category-item__icon
                 span.category-item__name 쿠폰함
             li.category-item
-                img(src="https://user-images.githubusercontent.com/95538993/177448698-63f51c9d-5c00-4467-8d10-2841a5d6f1f9.png", alt="gift icon").category-item__icon
+                img(src="/asset/img/present.png", alt="gift icon").category-item__icon
                 span.category-item__name 선물함
             li.category-item
-                img(src="https://user-images.githubusercontent.com/95538993/177448683-74f4aa09-dd02-43a9-a3b2-5138deba9162.png", alt="cart icon").category-item__icon
+                img(src="/asset/img/cart.png", alt="cart icon").category-item__icon
                 span.category-item__name 찜
             li.category-item
-                img(src="https://user-images.githubusercontent.com/95538993/177448693-97cc68d8-1944-497c-a382-f15b4549aa00.png", alt="order icon").category-item__icon
+                img(src="/asset/img/order.png", alt="order icon").category-item__icon
                 span.category-item__name 주문내역
             li.category-item
-                img(src="https://user-images.githubusercontent.com/95538993/177448699-fc015743-ac57-46fd-a4b1-fdcfe05d7610.png", alt="review icon").category-item__icon
+                img(src="/asset/img/review.png", alt="review icon").category-item__icon
                 span.category-item__name 리뷰관리
     section 
         .event.right-arrow-menu
-            img(src="https://user-images.githubusercontent.com/95538993/177448701-aff521a4-4b2b-471a-8e02-8ba56ea761d1.png", alt="root image")
+            img(src="/asset/img/root.png", alt="root image")
             span 일회용품 덜 쓰기, 함께해요
             .right-arrow-icon
                 i.fa-solid.fa-angle-right
@@ -43,13 +45,13 @@ block content
                 .menu-content
                     .menu__title 
                         span 배민페이 등록
-                        img(src="https://user-images.githubusercontent.com/95538993/177448691-72bc3846-a31f-4c12-896c-8d8a0bf06edf.png", alt="new icon").menu__title-icon
+                        img(src="/asset/img/new.png", alt="new icon").menu__title-icon
                     .menu__description
                         span 배민페이로 결제하면 최대 5.5% 배민포인트가 적립됩니다!
                 .menu-content
                     .menu__title 
                         span 가족계정 관리
-                        img(src="https://user-images.githubusercontent.com/95538993/177448691-72bc3846-a31f-4c12-896c-8d8a0bf06edf.png", alt="new icon").menu__title-icon
+                        img(src="/asset/img/new.png", alt="new icon").menu__title-icon
                     .menu__description
                         span 결제수단을 공유해 우리 가족의 끼니를 챙겨주세요.
                 .menu-content

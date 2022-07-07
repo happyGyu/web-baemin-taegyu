@@ -5,7 +5,7 @@ const handleLoginSubmit = (
   $pwInputAlertMessage,
   e
 ) => {
-  e.preventDefault();
+  //e.preventDefault();
   if (!$idInput.value.length) {
     $idInputAlertMessage.classList.remove("hidden");
   } else {

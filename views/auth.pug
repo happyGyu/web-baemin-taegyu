@@ -5,7 +5,10 @@ block styles
     link(rel="stylesheet", href="/style/auth.css")
 
 block header 
-    h1 핸드폰 인증 페이지
+    header
+        a(href="/join/agree").left-header-anchor
+        h1 회원가입
+        a(href='/join/user-info').right-header-anchor 다음
 
 block content 
     form.smart-input-form

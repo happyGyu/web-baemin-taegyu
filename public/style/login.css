@@ -1,5 +1,23 @@
 body {
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-header-anchor {
+  width: 1em;
+  height: 1rem;
+  background: url("/asset/img/cancel.png") no-repeat;
+  background-size: contain;
+}
+
+input {
+  all: unset;
 }
 
 .input-container {
@@ -42,9 +60,9 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-  color: lightgray;
+  color: grey;
   font-size: 1.25rem;
-  margin: 1rem auto;
+  margin: 2rem auto;
 }
 
 .divider {
@@ -57,7 +75,10 @@ body {
   bottom: 5rem;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  flex-grow: 1;
   gap: 1rem;
+  font-size: 1.25rem;
 }
 
 .oauth-login {
@@ -76,7 +97,7 @@ body {
 
 .join-container {
   width: fit-content;
-  margin: 1rem auto;
+  margin: 2rem auto;
 }
 
 .join-container a {

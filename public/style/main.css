@@ -5,8 +5,8 @@ h1 {
 }
 
 .banner {
-  background-color: grey;
-  height: 10rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .login-anchor-container {
@@ -52,8 +52,8 @@ h1 {
 }
 
 .event {
-  border-top: 1rem solid lightgray;
-  border-bottom: 1rem solid lightgray;
+  border-top: 1rem solid lightgrey;
+  border-bottom: 1rem solid lightgrey;
 }
 
 .right-arrow-menu {

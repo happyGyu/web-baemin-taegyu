@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "email": "test@naver.com",
+      "nickname": "sdfsdfs",
+      "password": "sdkfjaskdfjladfj;alks1",
+      "birthday": "1995.08.16"
+    },
+    {
+      "email": "test@test.com",
+      "nickname": "123",
+      "password": "kfsjdlfkjsdlkfjsld1",
+      "birthday": "1995.08.08"
+    },
+    {
+      "email": "test",
+      "nickname": "테스트용유저",
+      "password": "test",
+      "birthday": "1995.08.08"
+    }
+  ]
+}
