@@ -132,10 +132,6 @@ table {
   box-sizing: border-box;
 }
 
-input {
-  all: unset;
-}
-
 a {
   all: unset;
 }
