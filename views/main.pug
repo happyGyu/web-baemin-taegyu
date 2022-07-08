@@ -12,7 +12,7 @@ block content
     .user-container
         img(src="/asset/img/user.png").user__profile
         if userInfo
-           span.user__name 안녕하세요 #{userInfo.nickname}
+            a.login-anchor(href="javascript:if(confirm('로그아웃하시겠습니까?')){window.location.href='/logout'}") 안녕하세요 #{userInfo.nickname}
         else 
             a(href="/login").login-anchor 로그인해주세요
     ul.category

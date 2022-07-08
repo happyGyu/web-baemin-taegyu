@@ -13,7 +13,6 @@ router.post("/", (req, res) => {
     req.session.isWrong = true;
     res.redirect("/login");
   }
-
   req.session.user = user;
   res.redirect("/");
 });
