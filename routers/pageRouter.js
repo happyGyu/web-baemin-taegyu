@@ -18,4 +18,9 @@ router.get("/login", (req, res) => {
   res.render("login", { title: "로그인", isWrong });
 });
 
+router.get("/logout", (req, res) => {
+  req.session.destroy();
+  res.redirect("/");
+});
+
 module.exports = router;
