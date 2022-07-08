@@ -1,3 +1,10 @@
 {
-  "users": []
+  "users": [
+    {
+      "email": "test@test.copm",
+      "nickname": "test_user",
+      "password": "test",
+      "birthday": "1995.08.08"
+    }
+  ]
 }
