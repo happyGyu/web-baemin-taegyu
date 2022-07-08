@@ -1,0 +1,77 @@
+body {
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+.left-header-anchor {
+  width: 1rem;
+  height: 1rem;
+  background: url("/asset/img/cancel.png") no-repeat;
+  background-size: contain;
+}
+
+.right-header-anchor {
+  width: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 3rem 0;
+}
+
+.checkboxes-container {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.checkbox-container {
+  margin-top: 2rem;
+}
+
+.master-checkbox-container {
+  font-weight: 700;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.checkbox {
+  margin-right: 0.5rem;
+}
+
+.age-check-container {
+  position: relative;
+  margin-top: 1rem;
+  background-color: lightgrey;
+  padding: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.age-check-container img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+.next-button {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: #2ac1bc;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.next-button:disabled {
+  background-color: lightgray;
+}

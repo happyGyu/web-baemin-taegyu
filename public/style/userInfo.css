@@ -1,0 +1,30 @@
+body {
+  padding: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.email-validator {
+  border: 1px solid lightgray;
+  border-radius: 0.125rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.125rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+.left-header-anchor {
+  width: 1rem;
+  height: 1rem;
+  background: url("/asset/img/cancel.png") no-repeat;
+  background-size: contain;
+}

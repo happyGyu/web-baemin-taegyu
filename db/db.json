@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "email": "test@test.copm",
+      "nickname": "test_user",
+      "password": "test",
+      "birthday": "1995.08.08"
+    },
+    {
+      "email": "test22@test.com",
+      "nickname": "Alfas",
+      "password": "asdfghjkl1",
+      "birthday": "1995.08.08"
+    }
+  ]
+}

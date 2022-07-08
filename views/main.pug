@@ -1,0 +1,35 @@
+extends layout
+
+block styles
+    link(rel="stylesheet", href="/style/main.css")
+
+block header
+    header 
+        h1 My배민
+
+block content 
+    img(src="/asset/img/banner.png", alt="banner image").banner
+    .user-container
+        img(src="/asset/img/user.png").user__profile
+        if userInfo
+            a.login-anchor(href="javascript:if(confirm('로그아웃하시겠습니까?')){window.location.href='/logout'}") 안녕하세요 #{userInfo.nickname}
+        else 
+            a(href="/login").login-anchor 로그인해주세요
+    ul.category
+        each item in mainPageCategoryList
+            li.category-item
+                img(src= item.imgSrc, alt= item.alt).category-item__icon
+                span.category-item__name= item.name
+    .event
+        img(src="/asset/img/root.png", alt="root image")
+        span 일회용품 덜 쓰기, 함께해요
+    ul.menus
+        each menu in mainPageMenuList
+            li.menu 
+                .menu__title 
+                    span= menu.title
+                    if menu.isNew
+                        img(src="/asset/img/new.png", alt="new icon").menu__title-icon         
+                .menu__description
+                    span= menu.description
+                

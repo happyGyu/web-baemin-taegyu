@@ -1,0 +1,27 @@
+{
+  "name": "baemin-taegyu",
+  "version": "1.0.0",
+  "description": "first woowa-tech-camp project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "start:dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/happyGyu/baemin-taegyu.git"
+  },
+  "author": "happyGyu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/happyGyu/baemin-taegyu/issues"
+  },
+  "homepage": "https://github.com/happyGyu/baemin-taegyu#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "lowdb": "1.0",
+    "pug": "^3.0.2"
+  }
+}

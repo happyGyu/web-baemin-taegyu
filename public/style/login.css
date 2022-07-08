@@ -1,0 +1,106 @@
+body {
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+}
+
+.left-header-anchor {
+  width: 1rem;
+  height: 1rem;
+  background: url("/asset/img/cancel.png") no-repeat;
+  background-size: contain;
+}
+
+input {
+  all: unset;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.login-form {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.login-input {
+  height: 2rem;
+  border-bottom: 1px solid lightgrey;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+}
+
+.login-button {
+  background-color: #2ac1bc;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.input-alert-message {
+  color: red;
+}
+
+.find-account {
+  width: fit-content;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: grey;
+  font-size: 1.25rem;
+  margin: 2rem auto;
+}
+
+.divider {
+  height: 95%;
+  width: 2px;
+  background-color: lightgray;
+}
+
+.oauth-login-container {
+  bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1rem;
+  font-size: 1.25rem;
+}
+
+.oauth-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid grey;
+  border-radius: 0.25rem;
+  padding: 1rem 0;
+}
+
+.oauth-login img {
+  height: 1rem;
+}
+
+.join-container {
+  width: fit-content;
+  margin: 2rem auto;
+}
+
+.join-container a {
+  margin-left: 1rem;
+  color: #2ac1bc;
+}
+
+.hidden {
+  visibility: hidden;
+}

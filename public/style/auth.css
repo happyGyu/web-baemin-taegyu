@@ -1,0 +1,49 @@
+body {
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+.left-header-anchor {
+  width: 1rem;
+  height: 1rem;
+  background: url("/asset/img/back.png") no-repeat;
+  background-size: contain;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+input {
+  all: unset;
+}
+
+.certification-num-container {
+  position: relative;
+}
+
+.certification-num-input {
+  border-bottom: 1px solid gray;
+  padding: 0.75rem 0;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.certification-num-reissue-btn {
+  position: absolute;
+  right: 0;
+  bottom: -2rem;
+  color: #2ac1bc;
+}
+
+.hidden {
+  display: none;
+}
