@@ -5,7 +5,7 @@ const session = require("express-session");
 const joinRouter = require("./routers/joinRouter");
 const loginRouter = require("./routers/loginRouter");
 const pageRouter = require("./routers/pageRouter");
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 const app = express();
 
