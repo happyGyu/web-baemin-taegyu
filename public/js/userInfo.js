@@ -116,14 +116,23 @@ const checkPasswordValidity = (password) => {
 };
 
 const isThereSerialNum = (targetString, serialLength) => {
-  let serialCnt = 0;
+  let serialNumArr = [];
   for (const char of targetString) {
     if (isNaN(char)) {
-      serialCnt = 0;
-    } else {
-      serialCnt++;
+      serialNumArr = [];
+      continue;
     }
-    if (serialCnt >= serialLength) return true;
+
+    const difference = +char - serialNumArr.at(-1);
+    if (Math.abs(difference) !== 1) {
+      serialNumArr = [+char];
+      continue;
+    }
+    serialNumArr.push(+char);
+    if (difference !== serialNumArr.at(-2) - serialNumArr.at(-3)) {
+      serialNumArr = serialNumArr.slice(-2);
+    }
+    if (serialNumArr.length >= serialLength) return true;
   }
   return false;
 };
