@@ -38,6 +38,10 @@ input {
   padding: 1rem 0;
 }
 
+.login-input--error {
+  border-bottom-color: red;
+}
+
 .login-button {
   background-color: #2ac1bc;
   color: white;
