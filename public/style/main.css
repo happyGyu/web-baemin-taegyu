@@ -59,7 +59,7 @@ h1 {
 }
 
 .event {
-  border: solid lightgrey;
+  border: solid rgba(211, 211, 211, 0.5);
   border-width: 1rem 0;
   display: flex;
   align-items: center;
