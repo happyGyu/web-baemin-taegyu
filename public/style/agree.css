@@ -1,4 +1,4 @@
-body {
+.app {
   padding: 2rem;
 }
 
@@ -28,19 +28,18 @@ h2 {
   padding: 3rem 0;
 }
 
+.agree-form {
+  flex-grow: 1;
+  position: relative;
+}
+
 .checkboxes-container {
-  padding-bottom: 2rem;
   border-bottom: 1px solid lightgray;
 }
 
 .checkbox-container {
-  margin-top: 2rem;
-}
-
-.master-checkbox-container {
-  font-weight: 700;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid lightgray;
+  margin-bottom: 2rem;
+  display: block;
 }
 
 .checkbox {
@@ -49,8 +48,9 @@ h2 {
 
 .age-check-container {
   position: relative;
+  display: block;
   margin-top: 1rem;
-  background-color: lightgrey;
+  background-color: rgba(211, 211, 211, 0.5);
   padding: 1.5rem;
   font-size: 1.25rem;
 }
@@ -63,7 +63,8 @@ h2 {
 }
 
 .next-button {
-  margin-top: 2rem;
+  position: absolute;
+  bottom: 0;
   width: 100%;
   padding: 1rem;
   background-color: #2ac1bc;
@@ -74,4 +75,11 @@ h2 {
 
 .next-button:disabled {
   background-color: lightgray;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: lightgrey;
+  margin-bottom: 2rem;
 }

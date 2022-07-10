@@ -26,6 +26,10 @@ input {
   padding: 0.75rem 0;
 }
 
+.smart-input--error {
+  border-bottom-color: red;
+}
+
 .smart-input__inputbox {
   flex-grow: 1;
 }
@@ -33,20 +37,20 @@ input {
 .smart-input__reset-btn {
   width: 1.5rem;
   height: 1.5rem;
-  background-image: url("https://user-images.githubusercontent.com/95538993/177669348-1c652ca5-e306-469d-9a63-43164941745c.png");
+  background-image: url("/asset/img/close-circle.png");
   background-size: cover;
 }
 
 .smart-input__validity-checker {
-  width: 1rem;
+  width: 2rem;
   height: 1rem;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url("https://user-images.githubusercontent.com/95538993/177671176-abe5f8be-4435-43f8-8d6c-cb980d621ba1.png");
+  background-image: url("/asset/img/invalid.png");
 }
 
 .smart-input__validity-checker.valid {
-  background: url("https://user-images.githubusercontent.com/95538993/177671171-f5394d66-c708-474f-9b5b-dbc1fc66a5b5.png");
+  background-image: url("/asset/img/valid.png");
 }
 
 .smart-input__submit-btn {
@@ -60,4 +64,5 @@ input {
   position: absolute;
   bottom: -1.25rem;
   color: red;
+  font-size: 0.75rem;
 }

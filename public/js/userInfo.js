@@ -1,5 +1,12 @@
-import { $, $All } from "./domUtil.js";
+import { $, $All, addOrRemoveClass } from "./domUtil.js";
 import { debounce } from "./util.js";
+import {
+  BIRTHDAY_NUM_LENGTH,
+  FORMATTED_BIRTHDAY_LENGTH,
+  MIN_PW_ELEMENT_TYPE,
+  MIN_PW_LENGTH,
+  PW_SERIAL_NUM_LIMIT,
+} from "./constant.js";
 
 const init = () => {
   const $emailInput = $('[name="email-input"]');
@@ -12,47 +19,41 @@ const init = () => {
 
   $emailValidator.addEventListener(
     "click",
-    handleEmailValidatorClick.bind(null, $emailInput, $additionalInfoContainer)
+    handleEmailValidatorClick.bind(
+      null,
+      $emailInput,
+      inputList,
+      $submitBtn,
+      $additionalInfoContainer
+    )
   );
-  $birthdayInput.addEventListener("input", handleBirthdayInput);
+
   $additionalInfoContainer.addEventListener(
     "input",
-    debounce(handleInfoInput.bind(this, inputList, $submitBtn), 500)
+    debounce((e) => handleInfoInput(inputList, $submitBtn, e.target), 500)
   );
+
+  $birthdayInput.addEventListener("input", handleBirthdayInput);
+
   $submitBtn.addEventListener(
     "click",
     handleSubmitBtnClick.bind(null, $infoForm)
   );
 };
 
-const handleEmailValidatorClick = ($emailInput, $additionalInfoContainer) => {
-  handleInputValue($emailInput);
-  if (checkInputValidity($emailInput)) {
-    $additionalInfoContainer.classList.remove("hidden");
-  }
+const handleEmailValidatorClick = (
+  $emailInput,
+  inputList,
+  $submitBtn,
+  $additionalInfoContainer
+) => {
+  handleInfoInput(inputList, $submitBtn, $emailInput);
+  const isEmailValid = checkInputValidity($emailInput);
+  addOrRemoveClass($additionalInfoContainer, "hidden", !isEmailValid);
 };
 
-const handleBirthdayInput = (e) => {
-  const target = e.target;
-  const onlyNum = target.value.replaceAll(".", "");
-  if (onlyNum.length > 8 || isNaN(e.data)) {
-    target.value = target.value.slice(0, -1);
-    return;
-  }
-  if (onlyNum.length < 6) {
-    target.value = onlyNum;
-    return;
-  }
-  if (onlyNum.length === 6) {
-    target.value = onlyNum.slice(0, 4) + "." + onlyNum.slice(-2);
-    return;
-  }
-  target.value =
-    onlyNum.slice(0, 4) + "." + onlyNum.slice(4, -2) + "." + onlyNum.slice(-2);
-};
-
-const handleInfoInput = (inputList, $submitBtn, { target }) => {
-  handleInputValue(target);
+const handleInfoInput = (inputList, $submitBtn, $input) => {
+  checkInputValidityAndChangeState($input);
   const isAllInputValid = checkAllValidity(inputList);
   $submitBtn.disabled = !isAllInputValid;
 };
@@ -61,25 +62,22 @@ const checkAllValidity = (inputList) => {
   return Array.from(inputList).every(checkInputValidity);
 };
 
-const handleInputValue = ($input) => {
+const checkInputValidityAndChangeState = ($input) => {
   const isValid = checkInputValidity($input);
   handleInputContainer(isValid, $input);
 };
 
 const handleInputContainer = (isValueValid, $input) => {
-  const $validityChecker = $input.parentElement.querySelector(
+  const $inputContainer = $input.parentElement;
+  const $validityChecker = $inputContainer.querySelector(
     ".smart-input__validity-checker"
   );
-  const $errorMessage = $input.parentElement.querySelector(
+  const $errorMessage = $inputContainer.querySelector(
     ".smart-input__error-message"
   );
-  if (isValueValid) {
-    $validityChecker.classList.add("valid");
-    $errorMessage.classList.add("hidden");
-  } else {
-    $validityChecker.classList.remove("valid");
-    $errorMessage.classList.remove("hidden");
-  }
+  addOrRemoveClass($validityChecker, "valid", isValueValid);
+  addOrRemoveClass($errorMessage, "hidden", isValueValid);
+  addOrRemoveClass($inputContainer, "smart-input--error", !isValueValid);
 };
 
 const checkInputValidity = ($input, e) => {
@@ -111,21 +109,30 @@ const checkPasswordValidity = (password) => {
     return password.match(regex) ? ++acc : acc;
   }, 0);
 
-  if (password.length < 10) return false;
-  if (typeCnt < 2) return false;
-  if (isThereSerialNum(password, 3)) return false;
+  if (password.length < MIN_PW_LENGTH) return false;
+  if (typeCnt < MIN_PW_ELEMENT_TYPE) return false;
+  if (isThereSerialNum(password, PW_SERIAL_NUM_LIMIT)) return false;
   return true;
 };
 
 const isThereSerialNum = (targetString, serialLength) => {
-  let serialCnt = 0;
+  let serialNumArr = [];
   for (const char of targetString) {
-    if (!isNaN(char)) {
-      serialCnt++;
-    } else {
-      serialCnt = 0;
+    if (isNaN(char)) {
+      serialNumArr = [];
+      continue;
     }
-    if (serialCnt >= serialLength) return true;
+
+    const difference = +char - serialNumArr.at(-1);
+    if (Math.abs(difference) !== 1) {
+      serialNumArr = [+char];
+      continue;
+    }
+    serialNumArr.push(+char);
+    if (difference !== serialNumArr.at(-2) - serialNumArr.at(-3)) {
+      serialNumArr = serialNumArr.slice(-2);
+    }
+    if (serialNumArr.length >= serialLength) return true;
   }
   return false;
 };
@@ -137,8 +144,27 @@ const checkBirthdayValidity = (birthday) => {
   return (
     !isNaN(parsedBirthday) &&
     oldestDate < parsedBirthday &&
-    formattedBirthday.length === 10
+    formattedBirthday.length === FORMATTED_BIRTHDAY_LENGTH
   );
+};
+
+const handleBirthdayInput = (e) => {
+  const target = e.target;
+  const onlyNum = target.value.replaceAll(".", "");
+  if (onlyNum.length > BIRTHDAY_NUM_LENGTH || isNaN(e.data)) {
+    target.value = target.value.slice(0, -1);
+    return;
+  }
+  if (onlyNum.length < 6) {
+    target.value = onlyNum;
+    return;
+  }
+  if (onlyNum.length === 6) {
+    target.value = onlyNum.slice(0, 4) + "." + onlyNum.slice(-2);
+    return;
+  }
+  target.value =
+    onlyNum.slice(0, 4) + "." + onlyNum.slice(4, -2) + "." + onlyNum.slice(-2);
 };
 
 const handleSubmitBtnClick = ($infoForm) => {

@@ -1,0 +1,16 @@
+body {
+  background-color: ivory;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  width: 450px;
+  height: 95%;
+  overflow: scroll;
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}

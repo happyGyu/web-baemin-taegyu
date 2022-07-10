@@ -1,4 +1,4 @@
-body {
+.app {
   padding: 2rem;
 }
 
@@ -38,6 +38,10 @@ input {
   padding: 1rem 0;
 }
 
+.login-input--error {
+  border-bottom-color: red;
+}
+
 .login-button {
   background-color: #2ac1bc;
   color: white;
@@ -75,6 +79,7 @@ input {
   justify-content: flex-end;
   gap: 1rem;
   font-size: 1.25rem;
+  flex-grow: 1;
 }
 
 .oauth-login {
