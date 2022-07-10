@@ -1,4 +1,4 @@
-body {
+.app {
   padding: 2rem;
 }
 
@@ -75,6 +75,7 @@ input {
   justify-content: flex-end;
   gap: 1rem;
   font-size: 1.25rem;
+  flex-grow: 1;
 }
 
 .oauth-login {
